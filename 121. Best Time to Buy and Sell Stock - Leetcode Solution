@@ -1,0 +1,31 @@
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        low = prices[0]
+        high = prices[0]
+        i = 0
+        profit = 0
+
+        while i < n-1:
+            # When to buy
+            while prices[i] >= prices[i+1]:
+                i += 1
+
+            low = prices[1]
+
+
+            # when to sell
+            while prices[i] <= prices[i+1]:
+                i += 1
+
+            high = prices[i]
+
+            profit += high - low
+
+        return profit
+
+        # Time Complexity: O(n)
+        # Space Complexity: O(1)
