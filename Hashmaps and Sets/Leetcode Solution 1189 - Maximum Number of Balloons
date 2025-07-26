@@ -1,0 +1,18 @@
+from collections import defaultdict
+
+class Solution:
+    def maxNumberOfBalloons(self, text: str) -> int:
+        text_dict = defaultdict(int)
+        balloon = 'balloon'
+
+        for i in text:
+            text_dict[i] += 1
+
+        if any(c not in text_dict for c in balloon):
+            return 0
+        else:
+            return min(text_dict['b'], text_dict['a'], text_dict['l']//2, text_dict['o']//2, text_dict['n'])
+
+
+# Time Complexity: O(n) -> n = len(text)
+# Space Complexity: O(1)
