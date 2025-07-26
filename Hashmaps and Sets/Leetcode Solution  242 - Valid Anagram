@@ -13,5 +13,5 @@ class Solution:
 
         return False
 
-# Time Complexity - O(n)
-# Space Complexity - O(n)
+# Time Complexity - O(n + m)
+# Space Complexity - O(n + m)
