@@ -1,0 +1,23 @@
+class Solution:
+    def longestOnes(self, nums: List[int], k: int) -> int:
+        l = 0 
+        n = len(nums)
+        max_zeros = 0
+        max_len = 0
+
+        for r in range(n):
+            if nums[r] == 0:
+                max_zeros += 1
+
+            while max_zeros > k:
+                if nums[l] == 0:
+                    max_zeros -= 1
+
+                l += 1
+
+            max_len = max(max_len, r - l + 1)
+
+            # Time Complexity: O(n)
+            # Space Complexity: O(1)
+
+        
